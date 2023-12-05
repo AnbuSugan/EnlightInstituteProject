@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
 import Courses from "./Components/Courses/Courses";
+import Signin from "./Components/Signin/Signin";
 import Footer from "./Components/Footer/Footer";
 
 function App() {
@@ -19,10 +20,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/Courses" element={<Courses />} />
-          {/* <Route path="/Services" element={<Services />} />
-          <Route path="/Pricing" element={<Pricing />} />
+          <Route path="/Signin" element={<Signin />} />
+          {/* <Route path="/Pricing" element={<Pricing />} />
           <Route path="/Contact" element={<Contact />} />
-          <Route path="/Get" element={<Get />} />  */}
+          <Route path="/Get" element={<Get />} />   */}
         </Routes>
       </BrowserRouter>
       <Footer />

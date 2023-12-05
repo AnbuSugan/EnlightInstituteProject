@@ -10,6 +10,7 @@ import Row from "react-bootstrap/Row";
 import * as formik from "formik";
 import * as yup from "yup";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Courses = () => {
   const handleSubmit = async (values, { setSubmitting }) => {
@@ -42,6 +43,8 @@ const Courses = () => {
     city: yup.string().required(),
     state: yup.string().required(),
     zip: yup.string().required(),
+    userName: yup.string().required(),
+    password: yup.string().required(),
 
     terms: yup.bool().required().oneOf([true], "terms must be accepted"),
   });
@@ -66,12 +69,15 @@ const Courses = () => {
                   city: "",
                   state: "",
                   zip: "",
+                  userName: "",
+                  password: "",
                   terms: false,
                 }}
               >
                 {({ handleSubmit, handleChange, values, touched, errors }) => (
                   <Form noValidate onSubmit={handleSubmit}>
                     <Row>
+                      <h1>SignUp</h1>
                       <Col>
                         <Form.Group
                           controlId="validationFormik101"
@@ -267,7 +273,59 @@ const Courses = () => {
                         </Form.Group>
                       </Col>
                     </Row>
-                    <Form.Group className="position-relative mb-3">
+
+                    <Row>
+                      <Col>
+                        <Form.Group
+                          as={Col}
+                          controlId="validationFormik104"
+                          className="position-relative"
+                        >
+                          <Form.Label className="userNameLabel">
+                            UserName
+                          </Form.Label>
+                          <Form.Control
+                            type="text"
+                            placeholder="username"
+                            name="userName"
+                            value={values.userName}
+                            onChange={handleChange}
+                            isValid={touched.userName && !errors.userName}
+                            isInvalid={!!errors.userName}
+                            className="userName"
+                          />
+                          <Form.Control.Feedback type="invalid" tooltip>
+                            {errors.userName}
+                          </Form.Control.Feedback>
+                        </Form.Group>
+                      </Col>
+                      <Col>
+                        <Form.Group
+                          as={Col}
+                          controlId="validationFormik105"
+                          className="position-relative"
+                        >
+                          <Form.Label className="passwordLabel">
+                            Password
+                          </Form.Label>
+                          <Form.Control
+                            type="password"
+                            placeholder="Password"
+                            name="password"
+                            value={values.password}
+                            onChange={handleChange}
+                            isInvalid={!!errors.password}
+                            isValid={touched.pasword && !errors.password}
+                            className="zip"
+                          />
+
+                          <Form.Control.Feedback type="invalid" tooltip>
+                            {errors.password}
+                          </Form.Control.Feedback>
+                        </Form.Group>
+                      </Col>
+                    </Row>
+                    <Form.Group className="position-relative mt-5">
                       <Form.Check
                         required
                         name="terms"
@@ -284,6 +342,10 @@ const Courses = () => {
                     <Button type="submit" className="mt-5">
                       Submit
                     </Button>
+                    <h5 className="mt-5 mb-0">Let's Signin</h5>
+                    <Link to="/Signin" type="submit mt-0" className="mt-5 ">
+                      Signin
+                    </Link>
                   </Form>
                 )}
               </Formik>

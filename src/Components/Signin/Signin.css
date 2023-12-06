@@ -82,33 +82,33 @@
     font-weight: 50px !important;
     margin-left: 13% !important;
   }
-  .userName {
+  #userNames {
     border-color: blue;
     width: 80%;
     padding: 6px !important;
   }
-  .userNameError {
+  .userNameErrors {
     margin-left: 20%;
   }
-  .passwordLabel {
+  .passwordLabels {
     color: black;
     font-size: 15px !important;
     font-weight: 50px !important;
     margin-right: 80% !important;
   }
-  .password {
+  #passwords {
     border-color: blue;
     width: 80%;
     padding: 6px !important;
   }
 
-  .termsLabel {
-    margin-right: 25% !important;
+  .termsLabels {
+    margin-right: 30% !important;
     color: black;
     font-size: 15px !important;
     font-weight: 100px;
   }
-  .termsLabels {
+  .termsLabelss {
     margin-left: 10%;
   }
 
@@ -123,7 +123,7 @@
   font-weight: 100px;
   margin-right: 70%;
 }
-.userNames {
+#userNames {
   border-color: blue;
   width: 80%;
   padding: 12px;
@@ -139,7 +139,7 @@
   font-weight: 100px;
   margin-right: 70%;
 }
-.passwords {
+#passwords {
   border-color: blue;
   width: 80%;
   padding: 12px;
@@ -150,7 +150,7 @@
 }
 
 .termsLabelss {
-  margin-right: 40%;
+  margin-right: 30%;
   color: black;
   font-size: 20px;
   font-weight: 100px;

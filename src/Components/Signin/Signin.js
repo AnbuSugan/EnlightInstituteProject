@@ -14,24 +14,19 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Courses = () => {
   const navigate = useNavigate();
-
+ 
   const handleSubmit = async (values, { setSubmitting }) => {
     try {
-      alert("hi");
-      const response = await axios.post("http://localhost:3300/create", values);
-      alert("Hello");
-
+      const response = await axios.post(
+        "http://localhost:3300/login",
+        values
+      );
       console.log("API Response:", response.data);
-
-      if (response.data.status === "Success") {
-        navigate("/");
-      } else {
-        alert("Login failed. Please check your credentials.");
-      }
+      navigate("/");
     } catch (error) {
+      
       console.error("API Error:", error);
-
-      alert("An error occurred. Please try again later.");
+     
     } finally {
       setSubmitting(false);
     }
@@ -153,7 +148,8 @@ const Courses = () => {
                           onChange={handleChange}
                           isValid={touched.userName && !errors.userName}
                           isInvalid={!!errors.userName}
-                          className="userNames"
+                          className="userName"
+                          id="userNames"
                         />
                         <Form.Control.Feedback
                           type="invalid"
@@ -179,7 +175,8 @@ const Courses = () => {
                           onChange={handleChange}
                           isInvalid={!!errors.password}
                           isValid={touched.password && !errors.password}
-                          className="passwords"
+                          className="password"
+                          id="passwords"
                         />
 
                         <Form.Control.Feedback

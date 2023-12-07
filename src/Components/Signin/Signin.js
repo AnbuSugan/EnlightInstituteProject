@@ -12,7 +12,7 @@ import * as yup from "yup";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
-const Courses = () => {
+const Signin = () => {
   const navigate = useNavigate();
  
   const handleSubmit = async (values, { setSubmitting }) => {
@@ -220,4 +220,4 @@ const Courses = () => {
   );
 };
 
-export default Courses;
+export default Signin;
